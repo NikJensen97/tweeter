@@ -15,9 +15,18 @@ html {
  */
 
 body {
+  font-family: "Source Sans Pro", sans-serif;
   color: #545149;
+  font-weight: 600;
   background-color: #f4f1ec;
   font-size: 24px;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  color: inherit;
+
 }
 
 /*
