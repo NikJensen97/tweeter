@@ -1,0 +1,16 @@
+.main {
+  padding-top: 125px;
+  height: 425px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  background-color: #bd7100;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+
+}
+
+img {
+  height: 175px;
+  width: 175px;
+
+}
