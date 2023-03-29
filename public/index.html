@@ -9,21 +9,82 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Font stuff -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span style="font-family:'Bungee'; text-align: start;">tweeter</span>
+      <a style="color:white;margin-right:20px; text-align: end;">Write a new Tweet</a>
+      <i class="fa-solid fa-chevrons-down"></i>
     </nav>
-
+    <header class = "main">
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h4>Bob Rob</h4>
+      </div>
+  </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container"><section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form id = "textbox" class="form-inline" action="/tweets" method="POST">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section></main>
+    <article>
+      <header class = "tweet">
+        <h3>Rhonda Rowsy</h3>
+        <p class = "account">@RowdyRhonda</p>
+      </header>
+      <p class = "message">I like to punch AND kick</p>
+      <footer>
+        <p class = "date">2 days ago</p>
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+    </footer>
+    </article>
+    <article>
+      <header class = "tweet">
+        <h3>Weird Al</h3>
+        <p class = "account">@NormalAl</p>
+      </header>
+      <p class = "message">Check out my new movie!</p>
+      <footer>
+        <p class = "date">3 months ago</p>
+        <ul>
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        </ul>
+    </footer>
+    </article>
   </body>
 </html>
