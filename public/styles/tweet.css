@@ -1,0 +1,42 @@
+article {
+  border-style: solid;
+  width: 90%;
+  margin: auto;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+article:hover {
+  box-shadow: 10px 10px 20px;
+}
+.tweet {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+
+}
+.account {
+  opacity: 0.3;
+}
+.message {
+  margin: 1em;
+}
+footer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px;
+  border-top: solid;
+  margin: 1em;
+}
+footer i + i {
+  padding-left: 5px;
+} 
+i {
+  color: #4056A1;
+}
+i:hover {
+  color: brown; 
+}
+.date {
+  align-items: start;
+  margin-right: auto;
+}
