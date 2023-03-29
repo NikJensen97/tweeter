@@ -1,0 +1,21 @@
+nav {
+  justify-content: flex-end;
+  width: 100%;
+  background: #4056A1;
+  display: flex;
+  margin: 1.5em;
+  align-items: center;
+  height: 120px;
+  border: none;
+  border-width: none;
+  margin: 0;
+  padding: 1.5em 1.5em;
+  color: #FFFFFF;
+  position: fixed;
+  
+}
+span {
+  font-size: 45px;
+  align-items: start;
+  margin-right: auto;
+}
