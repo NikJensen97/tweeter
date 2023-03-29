@@ -1,0 +1,21 @@
+button {
+  padding: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-family: "Bungee";
+}
+textarea {
+  border-bottom: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+  width: 100%;
+  background: transparent;
+}
+output {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Bungee";
+}
