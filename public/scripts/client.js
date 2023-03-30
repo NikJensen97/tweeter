@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
+/*const data = [
   {
     "user": {
       "name": "Newton",
@@ -28,21 +28,27 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+] */
 
 $(document).ready(function () {
 
   const renderTweets = function (tweets) {
+    $('#tweet-container').empty();
     // loops through tweets
     for (let y = 0; y < tweets.length; y++) {
       let $tweet = createTweetElement(tweets[y]);
-      $('#tweet-container').append($tweet);
+      $('#tweet-container').prepend($tweet);
     }
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
   }
 
   const createTweetElement = function (tweet) {
+   /* if (tweet["content"]["text"].length > 140 || tweet["content"]["text"] === '') {
+      alert('message is invalid');
+      return;
+    } */
+    
     let $tweet = $(`
       <article>
         <header class = "tweet">
@@ -50,9 +56,9 @@ $(document).ready(function () {
           <h3>${tweet["user"]["name"]}</h3>
           <p class = "account">${tweet["user"]["handle"]}</p>
         </header>
-        <p class = "message">${tweet["content"]["text"]}</p>
+        <p class = "message">${encodeURI(tweet["content"]["text"])}</p>
         <footer>
-          <p class = "date">${tweet["created_at"]}</p>
+          <p class = "date">${timeago.format(tweet["created_at"])}</p>
           <i class="fa-solid fa-heart"></i>
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -61,6 +67,36 @@ $(document).ready(function () {
       `)
     return $tweet;
   }
+  $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+  .then(function (json) {
+    renderTweets(json);
+  });
+  const $form = $('#textbox');
+  const loadtweets = function () {
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then(function (json) {
+      renderTweets(json);
+    }
+  )};
+  
   // $('#tweet-container').append($tweet);
-  renderTweets(data);
+  //renderTweets(data);
+  $form.on('submit', (event) => {
+    event.preventDefault();
+    const urlencoded = $form.serialize();
+    console.log(urlencoded);
+
+
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: urlencoded
+    }).then((response) => {
+       console.log(response);
+       loadtweets();
+    });
+
+  });
+  
+  
 });
