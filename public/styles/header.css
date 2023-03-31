@@ -14,3 +14,18 @@
   width: 175px;
 
 }
+
+@media only screen and (min-width: 1024px) {
+.main {
+  padding-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin: 0 auto;
+  height: 100vh;
+  width: 400px;
+  height: 400px;
+  float: left;
+}
+
+}
