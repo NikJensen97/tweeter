@@ -6,6 +6,10 @@ button {
   font-family: "Bungee";
 }
 
+button:hover {
+  background-color: green;
+}
+
 textarea {
   border-bottom: solid;
   border-top: none;
@@ -20,4 +24,22 @@ output {
   display: flex;
   justify-content: flex-end;
   font-family: "Bungee";
+}
+
+p.error {
+  height: 50px;
+  position: absolute;
+  color: red;
+  border-color: red;
+  border-radius: 15px;
+  background-color: aliceblue;
+  display: inline-block;
+  border-style: solid;
+  padding: 10px;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  max-width: 60%;
+  display: none;
 }
