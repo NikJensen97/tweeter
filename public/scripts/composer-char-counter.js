@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
 
-  $('textarea').on('keypress', function () {
+  $('textarea').keyup(function () {
     current = $('.counter');
     var characterCount = $(this).val().length
-    current.text(139 - characterCount);
+    current.text(140 - characterCount);
 
     if (characterCount > 139) {
       current.css('color', 'red');
@@ -13,6 +13,7 @@ $(document).ready(function () {
     }
 
   })
+  
   /*
   const textarea = document.getElementById("textbox");
 
