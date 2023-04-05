@@ -14,10 +14,4 @@ $(document).ready(function () {
 
   })
   
-  /*
-  const textarea = document.getElementById("textbox");
-
-  textarea.addEventListener("keypress", function() {
-    console.log(this);
-  }); */
 });
